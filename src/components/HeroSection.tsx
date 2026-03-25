@@ -5,7 +5,11 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background grain/gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(36_100%_55%/0.06)_0%,_transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(200_80%_50%/0.06)_0%,_transparent_70%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_hsl(200_80%_50%/0.15)_0%,_transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(200_80%_50%/0.12)_0%,_transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(200_80%_50%/0.10)_0%,_transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_hsl(200_80%_50%/0.12)_0%,_transparent_50%)]" />
       
       <div className="relative z-10 text-center px-4">
         <motion.div
