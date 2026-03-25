@@ -1,0 +1,104 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { VideoItem, getThumbnail, getEmbedUrl } from "@/data/portfolio";
+import { Play, X } from "lucide-react";
+
+interface VideoCardProps {
+  video: VideoItem;
+  index: number;
+}
+
+const VideoCard = ({ video, index }: VideoCardProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const thumbnail = getThumbnail(video);
+  const isInstagram = video.platform === "instagram";
+
+  return (
+    <>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        className="group cursor-pointer"
+        onClick={() => setIsOpen(true)}
+      >
+        <div className="relative aspect-video rounded-lg overflow-hidden bg-secondary">
+          {thumbnail ? (
+            <img
+              src={thumbnail}
+              alt={video.title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-secondary to-card">
+              <span className="text-muted-foreground text-sm font-display">Instagram</span>
+            </div>
+          )}
+          
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div className="w-14 h-14 rounded-full bg-primary/90 flex items-center justify-center">
+              <Play className="w-6 h-6 text-primary-foreground ml-0.5" />
+            </div>
+          </div>
+
+          {/* Platform badge */}
+          <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-background/80 backdrop-blur-sm text-xs font-display uppercase tracking-wider text-foreground">
+            {video.platform === "youtube" ? "YouTube" : "Instagram"}
+          </div>
+        </div>
+
+        <div className="mt-3 px-1">
+          <h3 className="font-display font-semibold text-foreground group-hover:text-primary transition-colors duration-200">
+            {video.title}
+          </h3>
+          <p className="text-sm text-muted-foreground mt-1">{video.description}</p>
+        </div>
+      </motion.div>
+
+      {/* Modal */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/90 backdrop-blur-sm"
+            onClick={() => setIsOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full max-w-4xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute -top-12 right-0 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <X className="w-8 h-8" />
+              </button>
+              <div className={`rounded-lg overflow-hidden bg-card ${isInstagram ? "max-w-md mx-auto" : ""}`}>
+                <div className={isInstagram ? "aspect-[4/5]" : "aspect-video"}>
+                  <iframe
+                    src={getEmbedUrl(video)}
+                    className="w-full h-full"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                    title={video.title}
+                  />
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+export default VideoCard;
