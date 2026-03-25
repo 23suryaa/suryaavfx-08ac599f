@@ -1,4 +1,15 @@
 import { motion } from "framer-motion";
+import { useMemo } from "react";
+
+const particles = Array.from({ length: 30 }, (_, i) => ({
+  id: i,
+  x: Math.random() * 100,
+  y: Math.random() * 100,
+  size: Math.random() * 3 + 1,
+  duration: Math.random() * 8 + 6,
+  delay: Math.random() * 4,
+  opacity: Math.random() * 0.4 + 0.1,
+}));
 
 const HeroSection = () => {
   return (
@@ -27,6 +38,33 @@ const HeroSection = () => {
         transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_hsl(200_80%_55%/0.25)_0%,_transparent_40%)]"
       />
+
+      {/* Floating particles */}
+      <div className="pointer-events-none absolute inset-0 z-[1]">
+        {particles.map((p) => (
+          <motion.div
+            key={p.id}
+            className="absolute rounded-full bg-primary"
+            style={{
+              left: `${p.x}%`,
+              top: `${p.y}%`,
+              width: p.size,
+              height: p.size,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              x: [0, 10, -10, 0],
+              opacity: [p.opacity, p.opacity * 1.8, p.opacity],
+            }}
+            transition={{
+              duration: p.duration,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: p.delay,
+            }}
+          />
+        ))}
+      </div>
 
       <div className="relative z-10 text-center px-4">
         <motion.div
