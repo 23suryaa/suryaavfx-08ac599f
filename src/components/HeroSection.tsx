@@ -1,4 +1,15 @@
 import { motion } from "framer-motion";
+import { useMemo } from "react";
+
+const particles = Array.from({ length: 30 }, (_, i) => ({
+  id: i,
+  x: Math.random() * 100,
+  y: Math.random() * 100,
+  size: Math.random() * 3 + 1,
+  duration: Math.random() * 8 + 6,
+  delay: Math.random() * 4,
+  opacity: Math.random() * 0.4 + 0.1,
+}));
 
 const HeroSection = () => {
   return (
