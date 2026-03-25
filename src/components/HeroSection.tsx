@@ -14,9 +14,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-bold tracking-tight">
-            <span className="text-gradient">surya</span>
-            <span className="text-foreground">avfx</span>
-            <span className="text-primary">.</span>
+            <span className="text-gradient">suryaa</span>
+            <span className="text-foreground">vfx.</span>
           </h1>
         </motion.div>
         

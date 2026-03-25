@@ -21,7 +21,7 @@ const Navbar = () => {
     >
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <a href="#" className="font-display text-xl font-bold">
-          <span className="text-primary">surya</span>avfx<span className="text-primary">.</span>
+          <span className="text-primary">suryaa</span><span className="text-foreground">vfx.</span>
         </a>
         <div className="hidden sm:flex items-center gap-8">
           {["About", "Portfolio", "Contact"].map((item) => (
