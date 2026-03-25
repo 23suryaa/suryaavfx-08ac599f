@@ -3,13 +3,31 @@ import { motion } from "framer-motion";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background grain/gradient */}
+      {/* Background */}
       <div className="absolute inset-0 bg-background" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_hsl(200_80%_50%/0.18)_0%,_transparent_35%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(200_80%_50%/0.15)_0%,_transparent_35%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_hsl(200_80%_50%/0.12)_0%,_transparent_35%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_hsl(200_80%_50%/0.15)_0%,_transparent_35%)]" />
-      
+
+      {/* Animated corner glows */}
+      <motion.div
+        animate={{ opacity: [0.25, 0.4, 0.25], scale: [1, 1.1, 1] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_hsl(200_80%_55%/0.3)_0%,_transparent_40%)]"
+      />
+      <motion.div
+        animate={{ opacity: [0.2, 0.35, 0.2], scale: [1, 1.08, 1] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(200_80%_55%/0.25)_0%,_transparent_40%)]"
+      />
+      <motion.div
+        animate={{ opacity: [0.18, 0.3, 0.18], scale: [1, 1.06, 1] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_hsl(200_80%_55%/0.22)_0%,_transparent_40%)]"
+      />
+      <motion.div
+        animate={{ opacity: [0.2, 0.35, 0.2], scale: [1, 1.1, 1] }}
+        transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_hsl(200_80%_55%/0.25)_0%,_transparent_40%)]"
+      />
+
       <div className="relative z-10 text-center px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
