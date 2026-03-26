@@ -54,7 +54,7 @@ const VideoCard = ({ video, index }: VideoCardProps) => {
           <h3 className="font-display font-semibold text-foreground group-hover:text-primary transition-colors duration-200">
             {video.title}
           </h3>
-          <p className="text-sm text-muted-foreground mt-1">{video.description}</p>
+          
         </div>
       </motion.div>
 
