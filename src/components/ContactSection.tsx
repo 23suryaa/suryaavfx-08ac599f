@@ -33,7 +33,7 @@ const ContactSection = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
-            href="mailto:hello@suryaavfx.com"
+            href="mailto:suryaaram27@gmail.com"
             className="inline-flex items-center gap-3 px-8 py-3 rounded-full bg-primary text-primary-foreground font-display text-sm uppercase tracking-widest hover:opacity-90 transition-opacity"
           >
             <Mail className="w-4 h-4" />
