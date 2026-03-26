@@ -49,8 +49,12 @@ const VideoCard = ({ video, index, locked }: VideoCardProps) => {
           
           {/* Overlay */}
           <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <div className="w-14 h-14 rounded-full bg-primary/90 flex items-center justify-center">
-              <Play className="w-6 h-6 text-primary-foreground ml-0.5" />
+            <div className={`w-14 h-14 rounded-full ${locked ? "bg-muted/90" : "bg-primary/90"} flex items-center justify-center`}>
+              {locked ? (
+                <Lock className="w-6 h-6 text-muted-foreground" />
+              ) : (
+                <Play className="w-6 h-6 text-primary-foreground ml-0.5" />
+              )}
             </div>
           </div>
 
