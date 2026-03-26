@@ -22,7 +22,7 @@ const ContactSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-muted-foreground text-lg mb-10"
         >
-          Have a project in mind? I'd love to hear about it.
+          Have a project in mind? I'd love to help bring it to life!
         </motion.p>
 
         <motion.div
