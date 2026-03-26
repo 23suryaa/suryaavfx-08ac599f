@@ -40,7 +40,7 @@ const ContactSection = () => {
             Get In Touch
           </a>
           <a
-            href="https://www.instagram.com/suryaavfx"
+            href="https://www.instagram.com/suryaaa.ram/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-border text-foreground font-display text-sm uppercase tracking-widest hover:border-primary/50 hover:text-primary transition-colors"
