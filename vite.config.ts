@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: "/suryaavfx-08ac599f/",
   server: {
     host: "::",
     port: 8080,
@@ -17,6 +18,6 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-    dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime"],
   },
+  dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime"],
 }));
