@@ -110,6 +110,8 @@ const VideoCard = ({ video, index, locked }: VideoCardProps) => {
             </motion.div>
           </motion.div>
         )}
+      </AnimatePresence>
+
       {/* Locked modal */}
       <AnimatePresence>
         {showLocked && (
