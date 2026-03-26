@@ -110,6 +110,40 @@ const VideoCard = ({ video, index, locked }: VideoCardProps) => {
             </motion.div>
           </motion.div>
         )}
+      {/* Locked modal */}
+      <AnimatePresence>
+        {showLocked && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/90 backdrop-blur-sm"
+            onClick={() => setShowLocked(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative max-w-sm w-full bg-card border border-border rounded-xl p-8 text-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mx-auto mb-5">
+                <Lock className="w-7 h-7 text-muted-foreground" />
+              </div>
+              <h3 className="font-display font-bold text-lg text-foreground mb-3">Video Locked</h3>
+              <p className="text-muted-foreground font-body leading-relaxed">
+                This video is locked due to risk of self embarrassment, access may be granted upon further request :)
+              </p>
+              <button
+                onClick={() => setShowLocked(false)}
+                className="mt-6 px-6 py-2 rounded-full bg-primary text-primary-foreground font-display text-sm uppercase tracking-widest hover:opacity-90 transition-opacity"
+              >
+                Got it
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
       </AnimatePresence>
     </>
   );

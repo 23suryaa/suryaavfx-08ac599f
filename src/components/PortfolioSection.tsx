@@ -45,7 +45,7 @@ const PortfolioSection = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {category.videos.map((video, index) => (
-                <VideoCard key={video.url} video={video} index={index} />
+                <VideoCard key={video.url} video={video} index={index} locked={category.slug === "school-projects"} />
               ))}
             </div>
           </div>
