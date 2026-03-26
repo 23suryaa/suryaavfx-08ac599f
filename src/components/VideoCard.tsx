@@ -31,7 +31,7 @@ const VideoCard = ({ video, index, locked }: VideoCardProps) => {
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
         className="group cursor-pointer"
-        onClick={() => setIsOpen(true)}
+        onClick={handleClick}
       >
         <div className="relative aspect-video rounded-lg overflow-hidden bg-secondary">
           {thumbnail ? (
