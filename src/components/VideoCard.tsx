@@ -1,17 +1,27 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { VideoItem, getThumbnail, getEmbedUrl } from "@/data/portfolio";
-import { Play, X } from "lucide-react";
+import { Play, X, Lock } from "lucide-react";
 
 interface VideoCardProps {
   video: VideoItem;
   index: number;
+  locked?: boolean;
 }
 
-const VideoCard = ({ video, index }: VideoCardProps) => {
+const VideoCard = ({ video, index, locked }: VideoCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showLocked, setShowLocked] = useState(false);
   const thumbnail = getThumbnail(video);
   const isInstagram = video.platform === "instagram";
+
+  const handleClick = () => {
+    if (locked) {
+      setShowLocked(true);
+    } else {
+      setIsOpen(true);
+    }
+  };
 
   return (
     <>
