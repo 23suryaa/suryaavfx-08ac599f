@@ -21,10 +21,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-muted-foreground text-lg leading-relaxed"
         >
-          I'm a video editor and motion designer passionate about crafting compelling visual stories.
-          From gaming montages to campaign videos, school projects to social media content — I bring
-          creativity and precision to every project. My work spans multiple platforms and styles,
-          always focused on delivering polished, engaging content that makes an impact.
+          I'm a video editor and motion designer passionate about crafting compelling visual stories. From gaming montages to campaign videos, school projects to social media content, I bring creativity and precision to every project. My work spans multiple platforms and styles, always focused on delivering polished, engaging content that makes an impact.
         </motion.p>
         <div className="glow-line mt-12" />
       </div>

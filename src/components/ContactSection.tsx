@@ -22,7 +22,7 @@ const ContactSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-muted-foreground text-lg mb-10"
         >
-          Have a project in mind? I'd love to hear about it.
+          Have a project in mind? I'd love to help bring it to life!
         </motion.p>
 
         <motion.div
@@ -33,14 +33,14 @@ const ContactSection = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
-            href="mailto:hello@suryaavfx.com"
+            href="mailto:suryaaram27@gmail.com"
             className="inline-flex items-center gap-3 px-8 py-3 rounded-full bg-primary text-primary-foreground font-display text-sm uppercase tracking-widest hover:opacity-90 transition-opacity"
           >
             <Mail className="w-4 h-4" />
             Get In Touch
           </a>
           <a
-            href="https://www.instagram.com/suryaavfx"
+            href="https://www.instagram.com/suryaaa.ram/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-border text-foreground font-display text-sm uppercase tracking-widest hover:border-primary/50 hover:text-primary transition-colors"
