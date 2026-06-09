@@ -84,16 +84,6 @@ const CATEGORIES = [
     ],
   },
   {
-    name: "VP Campaign",
-    slug: "vp-campaign",
-    blurb: "Campaign recaps, spirit promos & animated intros.",
-    videos: [
-      { url: "https://youtu.be/swVVeW4ytpA", title: "Campaign Recap Edit" },
-      { url: "https://youtu.be/7YqFiCZsUdI", title: "Spirit Day Promo" },
-      { url: "https://youtu.be/GAXS9klRo04", title: "Intro Animation" },
-    ],
-  },
-  {
     name: "Gaming Content",
     slug: "gaming",
     blurb: "Montages, frag movies & hype edits. Beat-synced, fast, loud.",
