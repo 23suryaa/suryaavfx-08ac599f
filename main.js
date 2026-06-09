@@ -51,7 +51,7 @@ function wordmark(name) {
 document.getElementById("brandName").innerHTML = wordmark(CONFIG.brand);
 document.getElementById("footerBrand").textContent = CONFIG.brand;   // plain text in footer
 document.getElementById("year").textContent = "2026";
-document.title = `${CONFIG.brand} | Video Editor Portfolio`;
+document.title = `${CONFIG.brand}.`;
 
 document.getElementById("contactSocials").innerHTML = Object.entries(CONFIG.socials)
   .map(([k, u]) => {
