@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="rg" x1="13" y1="11" x2="51" y2="53" gradientUnits="userSpaceOnUse">
+    <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#ff2d55"/>
       <stop offset=".16" stop-color="#ff7a00"/>
       <stop offset=".32" stop-color="#ffd400"/>
@@ -11,7 +11,7 @@
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="14" fill="#16161d"/>
-  <text x="32" y="52" text-anchor="middle"
-        font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="62" font-weight="900"
-        fill="url(#rg)">S</text>
+  <g transform="translate(13.645,51.964) scale(0.05455,-0.05455)">
+    <path d="M338 -19Q242 -19 175 12Q108 43 73.5 97.5Q39 152 39 221L178 221Q178 192 194 164.5Q210 137 245.5 120Q281 103 338 103Q391 103 425.5 118Q460 133 477.5 157.5Q495 182 495 213Q495 251 462 274.5Q429 298 359 304L295 310Q190 319 127.5 375.5Q65 432 65 525Q65 595 98 645.5Q131 696 190.5 723.5Q250 751 330 751Q413 751 473.5 722Q534 693 566.5 640.5Q599 588 599 517L460 517Q460 546 446 571.5Q432 597 403 613Q374 629 330 629Q288 629 260.5 614.5Q233 600 219 576.5Q205 553 205 525Q205 491 230 465.5Q255 440 309 436L372 430Q451 424 509.5 397Q568 370 601 324Q634 278 634 213Q634 144 598 91.5Q562 39 495.5 10Q429 -19 338 -19Z" fill="url(#rg)"/>
+  </g>
 </svg>
