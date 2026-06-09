@@ -1,29 +1,102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>suryaavfx.</title>
-    <meta name="description" content="Official portfolio site for suryaavfx." />
-    <meta name="author" content="suryaa" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>suryaavfx | Video Editor Portfolio</title>
+  <meta name="description" content="High-energy video editing portfolio. Gaming montages, promos, recaps & more." />
 
-    <link rel="icon" href="/favicon.ico" />
+  <!-- Fonts: Inter (modern minimal display + body, à la context.ai) + Space Mono (tags) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="suryaavfx." />
-    <meta property="og:description" content="Official portfolio site for suryaavfx." />
-    <meta property="og:url" content="https://suryaavfx.com/" />
-    <meta property="og:image" content="https://suryaavfx.com/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="suryaavfx." />
-    <meta name="twitter:description" content="Official portfolio site for suryaavfx." />
-    <meta name="twitter:image" content="https://suryaavfx.com/favicon.png" />
-    <script type="module" crossorigin src="/assets/index-CrvggYbX.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CueDPqzW.css">
-  </head>
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#top">
+      <span class="nav__rec"></span>
+      <span class="nav__name" id="brandName">RIDVIK</span>
+    </a>
+    <nav class="nav__links" id="navLinks"></nav>
+    <a class="nav__cta" href="#contact">Contact me <span>→</span></a>
+  </header>
 
-  <body>
-    <div id="root"></div>
-  </body>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true"><div id="heroVideo"></div></div>
+
+    <div class="hero__inner">
+      <h1 class="hero__title">
+        <span class="line"><span class="reveal">suryaa<span class="accent">vfx.</span></span></span>
+      </h1>
+
+      <div class="hero__actions">
+        <a href="#work" class="btn btn--primary"><span>View projects</span><i class="btn__play"></i></a>
+        <a href="#contact" class="btn btn--ghost">Get in touch</a>
+      </div>
+
+      <p class="hero__note">A professional video editor with 6+ years of experience, fluent across a wide range of styles, from high-energy gaming montages to clean promos, recaps, and motion design.</p>
+    </div>
+  </section>
+
+  <!-- ===== WORK ===== -->
+  <main class="work" id="work">
+    <div class="work__particles" id="workParticles" aria-hidden="true"></div>
+
+    <!-- featured video -->
+    <section class="featured" id="featured"></section>
+
+    <!-- category sections render here -->
+    <div id="sections"></div>
+  </main>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="contact__inner">
+      <h2 class="contact__title">LET'S WORK<br /><span>TOGETHER.</span></h2>
+      <p class="contact__sub">Available for commissions and collaborations. Gaming montages, promos, recaps, and more.</p>
+      <div class="contact__socials" id="contactSocials"></div>
+    </div>
+    <footer class="footer">
+      <span>© <span id="year"></span> <span id="footerBrand"></span>. All rights reserved.</span>
+    </footer>
+  </section>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__backdrop" data-close></div>
+    <div class="lightbox__panel" role="dialog" aria-modal="true">
+      <button class="lightbox__close" data-close aria-label="Close">✕</button>
+      <div class="lightbox__meta">
+        <span class="lightbox__plat" id="lbPlatform"></span>
+        <span class="lightbox__title" id="lbTitle"></span>
+      </div>
+      <div class="lightbox__frame" id="lbFrame"></div>
+    </div>
+  </div>
+
+  <!-- ===== LOCKED VIDEO POPUP ===== -->
+  <div class="lockbox" id="lockbox" aria-hidden="true">
+    <div class="lockbox__backdrop" data-lockclose></div>
+    <div class="lockbox__panel" role="dialog" aria-modal="true">
+      <span class="lockbox__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+        </svg>
+      </span>
+      <h3 class="lockbox__title">Video Locked</h3>
+      <p class="lockbox__text">This video is locked due to risk of self embarrassment, access may be granted upon further request :)</p>
+      <button class="lockbox__btn" type="button" data-lockclose>GOT IT</button>
+    </div>
+  </div>
+
+  <script src="videos.js"></script>
+  <script src="main.js"></script>
+</body>
 </html>
