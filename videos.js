@@ -40,7 +40,7 @@ const CONFIG = {
   // `preview` is a muted clip that auto-plays in the card; clicking opens the full video.
   featured: {
     url:         "https://youtu.be/CoHcqppABXM",
-    preview:     "",                        // no local clip -> uses the YouTube thumbnail
+    preview:     "volleyball-preview.mp4",  // muted, compressed copy of final.mp4
     title:       "Whitney Girls Varsity Volleyball Hype Edit",
     description: "A hype edit made for Whitney High School's varsity girls volleyball team for their season opener, built to bring energy to the team and draw a crowd to their next home game.",
   },
