@@ -142,9 +142,15 @@ hydrateThumbs(document.getElementById("sections"));
   if (!f || !f.url || !host) return;
   const p = parseVideo(f);
   // auto-playing muted preview if a clip is provided, else a thumbnail image
+  // with no local clip, a YouTube featured video plays itself as a muted, looping embed
+  // layered over its thumbnail (the thumbnail shows while the embed loads)
+  const ytPreview = !f.preview && p.platform === "youtube" && p.id
+    ? `<iframe class="featured__yt" tabindex="-1" aria-hidden="true" frameborder="0" allow="autoplay; encrypted-media"
+         src="https://www.youtube.com/embed/${p.id}?autoplay=1&mute=1&loop=1&playlist=${p.id}&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3"></iframe>`
+    : "";
   const mediaInner = f.preview
     ? `<video class="featured__video" src="${escapeAttr(f.preview)}" muted autoplay loop playsinline preload="auto"></video>`
-    : `<img alt="${escapeAttr(f.title)}" ${p.thumb ? `src="${escapeAttr(p.thumb)}"` : `data-ytid="${p.id}"`}>`;
+    : `<img alt="${escapeAttr(f.title)}" ${p.thumb ? `src="${escapeAttr(p.thumb)}"` : `data-ytid="${p.id}"`}>${ytPreview}`;
   host.innerHTML = `
     <div class="featured__media" data-platform="${p.platform}" data-id="${p.id || ""}"
          data-title="${escapeAttr(f.title)}" data-url="${escapeAttr(f.url)}">

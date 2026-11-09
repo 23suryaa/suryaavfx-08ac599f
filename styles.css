@@ -396,6 +396,11 @@ a { color: inherit; text-decoration: none; }
 .featured__media img,
 .featured__media video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s var(--ease), filter .4s; }
 .featured__media video { pointer-events: none; }   /* clicks fall through to open the lightbox */
+/* YouTube autoplay preview: scaled up slightly to crop YouTube's overlay chrome; clicks pass through */
+.featured__media .featured__yt {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: 0; z-index: 2;
+  pointer-events: none; transform: scale(1.18);
+}
 .featured__media:hover img,
 .featured__media:hover video { transform: scale(1.04); filter: saturate(1.08); }
 /* preview plays on its own; the expand/play icon only appears on hover */
