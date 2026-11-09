@@ -39,10 +39,10 @@ const CONFIG = {
   // Featured video shown at the top of the projects section.
   // `preview` is a muted clip that auto-plays in the card; clicking opens the full video.
   featured: {
-    url:         "https://www.youtube.com/watch?v=fhot-LAZfEs",
-    preview:     "hero.mp4",
-    title:       "MUN New York Trip Recap",
-    description: "My most recent edit. A recap of our Model UN trip to New York City, capturing the tour through the city and our run at the National High School Model UN conference.",
+    url:         "https://youtu.be/CoHcqppABXM",
+    preview:     "",                        // no local clip -> uses the YouTube thumbnail
+    title:       "Whitney Girls Varsity Volleyball Hype Edit",
+    description: "A hype edit made for Whitney High School's varsity girls volleyball team for their season opener, built to bring energy to the team and draw a crowd to their next home game.",
   },
 
   // Hero background video. Plays muted on a seamless loop behind the headline.
@@ -81,6 +81,15 @@ const CATEGORIES = [
       { url: "https://www.youtube.com/watch?v=fhot-LAZfEs", title: "New York Trip Recap" },
       { url: "https://youtu.be/bmbWzVXXuCE", title: "Conference Recap Edit" },
       { url: "https://youtu.be/hkCuBnXk7mw", title: "Club Rush Recap Edit" },
+    ],
+  },
+  {
+    name: "Whitney High School",
+    slug: "whitney",
+    blurb: "Hype edits & intros for Whitney High School teams and clubs.",
+    videos: [
+      { url: "https://youtu.be/CoHcqppABXM", title: "Girls Varsity Volleyball Hype Edit" },
+      { url: "https://youtu.be/5Yqp0jnkON0", title: "ASB Exec Intros | Liv and Maddie Inspired" },
     ],
   },
   {
