@@ -90,7 +90,16 @@ const CATEGORIES = [
     videos: [
       { url: "https://youtu.be/CoHcqppABXM", title: "Girls Varsity Volleyball Hype Edit" },
       { url: "https://youtu.be/5Yqp0jnkON0", title: "ASB Exec Intros | Liv and Maddie Inspired" },
-      { url: "https://youtu.be/swVVeW4ytpA", title: "ASB VP Campaign Edit (for a friend, winning campaign)" },
+    ],
+  },
+  {
+    name: "VP Campaign",
+    slug: "vp-campaign",
+    blurb: "Campaign recaps, spirit promos & animated intros for a friend's ASB VP run (a winning campaign).",
+    videos: [
+      { url: "https://youtu.be/swVVeW4ytpA", title: "Campaign Recap Edit" },
+      { url: "https://youtu.be/7YqFiCZsUdI", title: "Spirit Day Promo" },
+      { url: "https://youtu.be/GAXS9klRo04", title: "Intro Animation" },
     ],
   },
   {
